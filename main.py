@@ -44,8 +44,8 @@ def index():
     else:
       return render_template("secret.html")
 
-@app.route('/delete', methods=['GET', 'POST'])
+@app.route('/secret', methods=['GET', 'POST'])
 def secret():
-  return render_template("delete.html")
+  return render_template("secret.html")
 
 app.run(host='0.0.0.0', port=8080)
