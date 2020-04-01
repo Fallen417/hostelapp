@@ -16,7 +16,9 @@ def home():
       if "y2" in line:
         result2 += 1
   currenttime = datetime.datetime.now()
-  if currenttime == "00:00:00.00000":
+  stringy = currenttime.isoformat()
+  print(stringy[-15:])
+  if stringy == "00:00:00.000000":
     f = open('file.txt', 'r+')
     f.truncate(0)
   if request.method == 'GET':
@@ -45,5 +47,9 @@ def index():
 @app.route('/secret', methods=['GET', 'POST'])
 def secret():
   return render_template("secret.html")
+
+@app.route('/delete', methods=['GET', 'POST'])
+def delete():
+  return render_template("delete.html")
 
 app.run(host='0.0.0.0', port=8080)
