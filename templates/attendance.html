@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>DHoStel - 
+		Attendance</title>
+    <link rel="icon" href="/static/cropped-favicon-32x32.png" sizes="32x32" />
+    <link rel="stylesheet" href="/static/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	  <body>
+      <div class="sidenav">
+        <img src="/static/logo.png">
+        <a href="/">Home</a>
+        <a href="/attendance">Attendance</a>
+        <a href="/delete">Delete</a>
+      </div>
+      <div class="main">
+        <h1>DHoStel</h1>
+        <h2>Meal Attendance</h2>
+        <form action="/attendance" method="POST" required>
+          Enter Name:
+          <input type="textbox" placeholder="Name" name="name" id="name" required/>
+          <br /><br />
+          Enter Mobile Number:
+          <input type="textbox" placeholder="XXXX XXXX" name="mobile" id="mobile" required/>
+          <br /><br />
+          Do you require Breakfast?
+          <label for="yes1">
+            <input type="radio" name="breakfast" id="yes1" value="y1" required/>Yes
+          </label>
+          <label for="no1">
+            <input type="radio" name="breakfast" id="no1" value="n1" required/>No
+          </label>
+          <br /><br />
+          Do you require Dinner?
+          <label for="yes2">
+              <input type="radio" name="dinner" id="yes2" value="y2" required/>Yes
+          </label>
+          <label for="no2">
+          <input type="radio" name="dinner" id="no2" value="n2" required/>No
+          </label>
+          <br /><br />
+          <input type="submit" value="Submit"/>
+        </form>
+    </div>
+	</body>
+</html>
