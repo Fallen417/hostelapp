@@ -3,6 +3,15 @@ import datetime
 import re
 app = Flask(__name__)
 
+'''comments: good app design for school related app
+             like the small dhs logo in the tab
+             very helpful app for hostel people
+             i like the restriction given to the phone number
+             easter egg is too easy to be found, not interesting
+             <br> can just be <br> don't need <br />
+             can save data into csv file if you want to delete each person's attendance individually
+             overeall good and useful app!'''
+
 @app.route('/', methods=['GET', 'POST'])
 def home():
   result1 = 0
@@ -47,5 +56,17 @@ def index():
 @app.route('/secret', methods=['GET', 'POST'])
 def secret():
   return render_template("secret.html")
+  
+@app.route('/confirmdelete', methods=['GET', 'POST'])
+def confirmdelete():
+  adminname=request.form.get("adminname")
+  adminpw=request.form.get("adminpw")
+  if adminname=="iamtheadmin" and adminpw=="iamdefinitelytheadmin":
+    filey = open("INFO.txt","r+")
+    filey.truncate(0)
+    filey.close()
+    return render_template("attendance.html")
+  else:
+    return render_template("delete.html")
 
 app.run(host='0.0.0.0', port=8080)
