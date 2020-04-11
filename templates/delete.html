@@ -13,16 +13,18 @@
         <img src="/static/logo.png">
         <a href="/">Home</a>
         <a href="/attendance">Attendance</a>
-        <a href="/delete">Delete</a>
+        <a href="/confirmdelete">Delete</a>
       </div>
       <div class="main">
         <h1>DHoStel</h1>
-        <h2>Delete Meal Attendance</h2>
-        <form action="/delete" method="POST" required>
-          Enter Name:
-          <input type="textbox" placeholder="Name" name="deletename" id="deletename" required/>
+        <h2>Admin Delete</h2>
+        <form action="/confirmdelete" method="POST" required>
+          Enter Admin Name:
+          <input type="textbox" placeholder="Name" name="adminname" id="adminname" required/><br>
+          Enter Admin Password:
+          <input type="password" placeholder="Password" name="adminpw" id="adminpw" required/>
           <br /><br />
-          <input type="submit" value="Submit"/>
+          <input type="submit" value="Submit" >
         </form>
     </div>
 	</body>
